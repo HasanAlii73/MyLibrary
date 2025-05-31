@@ -1,4 +1,39 @@
-const myLibrary = [];
+let myLibrary = [  
+    {
+        title: "48 laws of power",
+        author: "Robert Greene",
+        pages: 635,
+        read: true,
+        genre: "Self-help-book"
+    },
+    {
+        title: "Surrounded by idiots",
+        author: "Thomas Erikson",
+        pages: 320,
+        read: true,
+        genre: "Self-help-book"
+    },
+    {
+        title: "The Atomic Habits",
+        author: "James Clear",
+        pages: 291,
+        read: true,
+        genre: "Self-help-book"
+    },
+    {
+        title: "The Prince",
+        author: "Niccolo Machiavelli",
+        pages: 126,
+        read: true,
+        genre: "Non-fiction"
+    },
+    {
+        title: "Ego is the enemy",
+        author: "Ryan Holiday",
+        pages: 287,
+        read: true,
+        genre: "Self-help-book"
+    }];
 const library = document.querySelector(".library");
 
 const dialog = document.querySelector("dialog");
@@ -51,6 +86,17 @@ function renderLibrary() {
     });
 }
 
+function toggleReadStatus(index) {
+    myLibrary[index].read = !myLibrary[index].read;
+    renderLibrary();
+}
+
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    renderLibrary();
+}
+
+
 addNewBtn.addEventListener("click", () => {
     dialog.showModal();
 });
@@ -68,15 +114,22 @@ form.addEventListener("submit", (event) => {
     const genre = document.getElementById("inGenre").value;
     const isRead = document.getElementById("inRead").checked;
     addBookToLibrary(title, author, pages, genre, isRead);
-    showBooks(-1);
     form.reset();
     dialog.close();
 });
 
-// addBookToLibrary("48 laws of power", "Robert Greene", 635, "Self-help-book", true);
-// addBookToLibrary("Surrounded by idiots", "Thomas Erikson", 320, "Self-help-book", true);
-// addBookToLibrary("The Atomic Habits", "James Clear", 291, "Self-help-book", true);
-// addBookToLibrary("The Prince", "Niccolo Machiavelli", 126, "Non-fiction", true);
-// addBookToLibrary("Ego is the enemy", "Ryan Holiday", 287, "Self-help-book", true);
-console.log(library);
-showBooks(-1);
+ document.querySelectorAll('.toggle-read-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.dataset.index;
+                toggleReadStatus(index);
+            });
+});
+
+document.querySelectorAll('.remove-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const index = e.target.dataset.index;
+        removeBook(index);
+    });
+});
+
+renderLibrary();
