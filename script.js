@@ -57,6 +57,18 @@ function showBooks(){
     }
 }
 
+const dialog = document.querySelector("dialog");
+const addNewBtn = document.querySelector(".btnAddNewBook");
+const closeBtn = document.querySelector("dialog button");
+
+addNewBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeBtn.addEventListener("click", () => {
+  dialog.close();
+});
+
 addBookToLibrary("48 laws of power", "Robert Greene", 635, "Self-help-book", true);
 addBookToLibrary("Surrounded by idiots", "Thomas Erikson", 320, "Self-help-book", true);
 addBookToLibrary("The Atomic Habits", "James Clear", 291, "Self-help-book", true);
