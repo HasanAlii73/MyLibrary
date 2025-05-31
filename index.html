@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Library</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -22,17 +22,24 @@
     </div>
 
     <dialog>
-        <form>
+        <form id="book-form">
             <label for="inTitle">Title:</label>
-            <input type="text" name="inTitle" id="inTitle">
+            <input type="text" name="inTitle" id="inTitle" required>
+            
             <label for="inAuthor">Author:</label>
-            <input type="text" name="inAuthor" id="inAuthor">
+            <input type="text" name="inAuthor" id="inAuthor" required>
+       
             <label for="inPages">Pages:</label>
-            <input type="number" name="inPages" id="inPages">
+            <input type="number" name="inPages" id="inPages" required>
+
+            <label for="inGenre">Genre:</label>
+            <input type="text" name="inGenre" id="inGenre" required>       
+           
             <label for="inRead">I read this book</label>
             <input type="checkbox" name="inRead" id="inRead">
+            
             <button class="btnCloseForm">Close</button>
-            <button class="btnAdd">Add Book</button>
+            <button type="submit" class="btnAdd">Add Book</button>
         </form>
     </dialog>
 </body>
