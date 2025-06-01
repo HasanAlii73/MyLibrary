@@ -13,26 +13,39 @@
     <div class="library"></div>
 
 
-    <dialog>
-        <form id="book-form">
-            <label for="inTitle">Title:</label>
-            <input type="text" name="inTitle" id="inTitle" required>
-            
-            <label for="inAuthor">Author:</label>
-            <input type="text" name="inAuthor" id="inAuthor" required>
-       
-            <label for="inPages">Pages:</label>
-            <input type="number" name="inPages" id="inPages" required>
-
-            <label for="inGenre">Genre:</label>
-            <input type="text" name="inGenre" id="inGenre" required>       
-           
-            <label for="inRead">I read this book</label>
-            <input type="checkbox" name="inRead" id="inRead">
-            
-            <button class="btnCloseForm">Close</button>
-            <button type="submit" class="btnAdd">Add Book</button>
-        </form>
-    </dialog>
+    <div class="dialog-overlay">
+        <dialog>
+            <form id="book-form">
+                <div class="inputForm">
+                    <label for="inTitle">Title:</label>
+                    <input type="text" name="inTitle" id="inTitle" required>
+                </div>
+        
+                <div class="inputForm">
+                    <label for="inAuthor">Author:</label>
+                    <input type="text" name="inAuthor" id="inAuthor" required>
+                </div>
+        
+                <div class="inputForm">
+                    <label for="inPages">Pages:</label>
+                    <input type="number" name="inPages" id="inPages" required>
+                </div>
+                <div class="inputForm">
+                    <label for="inGenre">Genre:</label>
+                    <input type="text" name="inGenre" id="inGenre" required>
+                </div>
+        
+                <div class="checkBoxInput">
+                    <label for="inRead">I read this book</label>
+                    <input type="checkbox" name="inRead" id="inRead">
+                </div>
+        
+                <div>
+                    <button class="btnCloseForm">Close</button>
+                    <button type="submit" class="btnAdd">Add Book</button>
+                </div>
+            </form>
+        </dialog>
+    </div>
 </body>
 </html>

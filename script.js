@@ -41,7 +41,9 @@ const addNewBtn = document.querySelector(".btnAddNewBook");
 const closeBtn = document.querySelector("dialog button");
 const addBtn = document.querySelector(".btnAdd");
 const form = document.querySelector("#book-form");
+const overlay = document.querySelector(".dialog-overlay");
 
+renderLibrary();
 
 function Book(id, title, author, pages, genre, read) {
     this.id = id;
@@ -99,11 +101,13 @@ function removeBook(index) {
 
 addNewBtn.addEventListener("click", () => {
     dialog.showModal();
+    overlay.style.display = "flex";
 });
 
 closeBtn.addEventListener("click", () => {
     dialog.close();
     form.reset();
+    overlay.style.display = "none";
 });
 
 form.addEventListener("submit", (event) => {
@@ -118,12 +122,14 @@ form.addEventListener("submit", (event) => {
     dialog.close();
 });
 
- document.querySelectorAll('.toggle-read-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const index = e.target.dataset.index;
-                toggleReadStatus(index);
-            });
+document.querySelectorAll(".toggle-read-btn ").forEach(button => {
+    button.addEventListener("click", (e) => {
+        const index = e.target.dataset.index;
+        toggleReadStatus(index);
+        console.log("Button Clicked:", e.target);
+    });
 });
+
 
 document.querySelectorAll('.remove-btn').forEach(button => {
     button.addEventListener('click', (e) => {
@@ -132,4 +138,8 @@ document.querySelectorAll('.remove-btn').forEach(button => {
     });
 });
 
-renderLibrary();
+// document.querySelector(".remove-btn").addEventListener("click", e => {
+//     const index = e.target.dataset.index;
+//     removeBook(index);
+// });
+
