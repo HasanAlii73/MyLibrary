@@ -122,24 +122,16 @@ form.addEventListener("submit", (event) => {
     dialog.close();
 });
 
-document.querySelectorAll(".toggle-read-btn ").forEach(button => {
-    button.addEventListener("click", (e) => {
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("toggle-read-btn")) {
         const index = e.target.dataset.index;
         toggleReadStatus(index);
-        console.log("Button Clicked:", e.target);
-    });
+    }
 });
 
-
-document.querySelectorAll('.remove-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("remove-btn")) {
         const index = e.target.dataset.index;
         removeBook(index);
-    });
+    }
 });
-
-// document.querySelector(".remove-btn").addEventListener("click", e => {
-//     const index = e.target.dataset.index;
-//     removeBook(index);
-// });
-
