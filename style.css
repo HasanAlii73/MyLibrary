@@ -1,0 +1,53 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #eee;
+    font-size: 20px;
+}
+button{
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+}
+.header{
+    text-align: center;
+    margin-top: 20px;
+}
+.btnAddNewBook{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    margin-bottom: 35px;
+    background-color: rgb(30, 164, 0);
+    font-size: 20px;
+}
+.library{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    padding-bottom: 100px;
+}
+.book-card{
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: gray;
+    border-radius: 10px;
+}
+.book-card > h3{
+    color: black;
+}
+.toggle-read-btn{
+    background-color: rgb(0, 166, 255);
+}
+.remove-btn{
+    background-color: rgb(248, 69, 69);
+}
